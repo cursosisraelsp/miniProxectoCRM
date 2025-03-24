@@ -16,7 +16,6 @@ private metodoRefFormulario(){
 private metodoDatosFormulario(){
 
 }
-
 private metodoDatosObxetoEnvio (){
     let datosFormArrayArrays = this.datosFormulario.entries();
     this.datosFormTranformadosObxecto = obxect.formEntries (datosFormArrayArrays);
