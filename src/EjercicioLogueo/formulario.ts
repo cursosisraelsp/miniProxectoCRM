@@ -11,10 +11,8 @@ this.metodoDatosFormulario()
 this.metodoPreparandoObxetoEnvio()
 }
 private metodoRefFormulario(){
-
 }
 private metodoDatosFormulario(){
-
 }
 private metodoDatosObxetoEnvio (){
     let datosFormArrayArrays = this.datosFormulario.entries();
