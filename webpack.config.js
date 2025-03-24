@@ -86,6 +86,10 @@ module.exports = {
             filename: './views/new_product.html', // Arquivo de salida
             template: './src/views/new_product.html', // Plantilla HTML
           }),
+          new HtmlWebpackPlugin({
+            filename: "./views/formulario-producto-adrian.html",
+            template: "./src/views/formulario-producto-adrian.html",
+          }),
       
         new MiniCssExtractPlugin({ filename: './css/[name].css' }), // Arquivo CSS final
         new CopyPlugin({

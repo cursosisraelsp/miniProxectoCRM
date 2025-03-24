@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { paxinaApp, paxinaNoUser,paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas, paxinaNewProduct, paxinaHome, paxinaAxustes } = require("./controladores/views");
+const { paxinaApp, paxinaNoUser,paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas, paxinaNewProduct, paxinaHome, paxinaAxustes, paxinaFormularioProductoAdrian } = require("./controladores/views");
 
 const app = express();
 
@@ -42,7 +42,7 @@ app.post("/logueandome",(req,res)=>{
     
     console.log("recibo dato no server",req.body)
 
-    let condicion = req.body.nome2 === 'Israel' && req.body.apelido2 === 'mariano';
+    let condicion = req.body.nome2 ==='Adrian' && req.body.apelido2 ==='Conxo';
     
     //condicion ? paxinaHome(req,res) : paxinaNoUser(req,res) 
     //condicion ?  paxinaHome(req,res): res.redirect("/no-user")
@@ -71,6 +71,9 @@ app.get("/productos",(req,res)=>{
 })
 app.get("/axustes",(req,res)=>{
     paxinaAxustes(req,res)
+})
+app.get("/formulario-producto-adrian",(req,res)=>{
+    paxinaFormularioProductoAdrian (req,res);
 })
 //Un evento dende o cliente
 app.post("/envio-datos-o-servidor",(req,res)=>{

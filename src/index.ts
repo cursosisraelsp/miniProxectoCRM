@@ -29,7 +29,14 @@ if(location.pathname == "/logueo"){
         let oFormulario = new Formulario("#form-logueo");
         oFormulario.metodoAccionFormulario();
         let datosFormulario = oFormulario.DatosEnviados;
-        await Comunicacion.metodoPost("/logueandome",datosFormulario)
+        await Comunicacion.metodoPost("/logueandome",datosFormulario);
+        const resposta:any = Comunicacion.respostaServidor;
+        console.log("resposta do servidor:", resposta);
+        if (resposta?.resposta === "o envio foi correcto") {
+            window.location.href ="/formulario-producto-adrian";
+        } else{
+            alert("Usuario incorrecto.Non podes acceder.");
+        }
     })
 }
 
@@ -42,5 +49,24 @@ if(location.pathname == "/recibo-datos-do-servidor"){
     console.log("document.querySelector ",document.body)
 }
 }
+if (location.pathname === "/formulario-producto-adrian") {
+    const boton: HTMLButtonElement = document.querySelector("#envio-produto-adrian");
+  
+    boton.addEventListener("click", async (e) => {
+      e.preventDefault();
+  
+      const oFormulario = new Formulario("#form-adrian");
+      oFormulario.metodoAccionFormulario();
+  
+      const datosFormulario = oFormulario.DatosEnviados;
+  
+      await Comunicacion.metodoPost("/envio-datos-o-servidor", datosFormulario);
+  
+      const resposta:any = Comunicacion.respostaServidor;
+      const divResposta = document.getElementById("resposta");
+      divResposta.innerText = resposta?.mensaxe ||"sen resposta do servidor"
+    });
+  }
+  
 
 main()

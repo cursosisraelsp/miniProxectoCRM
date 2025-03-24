@@ -15,6 +15,7 @@ const paxinaCustomers = require("./paxina.customers.js")
 const paxinaGraficas = require("./paxina.graficas.js")
 const paxinaNewProduct = require("./paxina.new_product.js")
 const paxinaHome = require("./paxina.home.js")
+const paxinaFormularioProductoAdrian = require("./paxina.formulario.adrian.js")
 
 module.exports = {
     paxinaApp,
@@ -28,6 +29,7 @@ module.exports = {
     paxinaCustomers,
     paxinaGraficas,
     paxinaNewProduct,
-    paxinaHome
+    paxinaHome,
+    paxinaFormularioProductoAdrian
 }
 
