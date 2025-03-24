@@ -1,40 +1,34 @@
-export class Comunicacion{
-    
-    static datos: Object;
-    
-    static async metodoGet(endpoint: string){
-        console.log("this.endpoint ",endpoint)
-        let datoServidor = await fetch(endpoint);
-        this.datos = await datoServidor.json();
+export class Comunicacion {
+    static datos: any;
+
+    static async metodoGet(endpoint: string) {
+        try {
+            let respuesta = await fetch(endpoint);
+            this.datos = await respuesta.json();
+        } catch (error) {
+            console.error("Error en GET:", error);
+        }
     }
 
-    static async metodoPost(endpoint: string){
-        type datosObxeto = {
-            dato1: string,
-            dato2: string,
-            dato3: number
+    static async metodoPost(endpoint: string, datos: any) {
+
+        console.log("Enviando datos a:", endpoint);
+        console.log("Datos enviados:", datos);
+
+        try {
+
+            let resposta = await fetch(endpoint, datos);
+            this.datos = await resposta.json();
+            console.log("Respuesta del servidor: ", this.datos)
+
+        } catch (error) {
+            console.log("Fallo en el inicio de sesión", error);
         }
-        
-        let datosEnvio: datosObxeto = {
-            dato1: "mariano",
-            dato2: "pepito",
-            dato3: 5
-        }
-    
-        let obxetoEnvio = {
-            method: 'post',
-            headers: {
-                "Content-type":"application/json"
-            },
-            body:JSON.stringify(datosEnvio)
-        }
-        let resposta = await fetch(endpoint,obxetoEnvio);
-        this.datos = await resposta.json();
+
 
     }
 
-    static get respostaServidor(){
-        return this.datos
+    static get respostaServidor() {
+        return this.datos;
     }
 }
-

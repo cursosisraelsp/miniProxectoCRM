@@ -36,6 +36,11 @@ module.exports = {
     
     plugins: [
         /*vanessa */
+        
+        new HtmlWebpackPlugin({
+            filename: './views/logueo.html',
+            template: './src/views/logueo.html'
+        }),
         new HtmlWebpackPlugin({
             filename: './views/customers.html',
             template: './src/views/customers.html',
