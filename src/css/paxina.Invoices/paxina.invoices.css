@@ -1,12 +1,6 @@
 h1 {
   text-decoration: underline;
 }
-body {
-.side-menu-fran {
-  position: left;
-  margin: 0px;
-  padding: 0px;
-  }
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
