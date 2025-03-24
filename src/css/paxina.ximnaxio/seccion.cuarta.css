@@ -59,7 +59,7 @@ blockquote {
 #enlace-4 {
   --color-test: white;
   position: relative;
-  background-image: url("../imaxenes/fondo_xente_gimn_svg.svg");
+  background-image: url("../../imaxenes/fondo_xente_gimn_svg.svg");
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--color-test);

@@ -8,6 +8,7 @@
 @import url("./menu.css");
 @import url("./elementos.imaxes.posicion.css");
 @import url("./estilo.etiquetas.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +44,7 @@ scroll-container {
   font-size: 3rem;
   font-weight: 700;
 }
+
 header {
   /* border: 1px solid var(--cor-test); */
   /* position: absolute; */
@@ -152,17 +154,17 @@ nav.galeria-imaxes {
   background: var(--estilo-gradiante-imaxen-home-ximnaxio);
   height: 100vw;
 }
-
+/* 
 section {
   display: flex;
-  /* height: 1024px; */
+
   height: var(--altura-seccion);
-}
+} */
 /* ELEMENTO FILLO */
 
 article {
   flex: 1; /* propiedade de flex que está relacionado ca lonxitude */
-  height: 800px;
+  /* height: 800px; */
 }
 
 a {

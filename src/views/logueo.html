@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <!-- <link rel="stylesheet" href="./css/main.css" /> -->
 </head>
-<body>
-    <form method="post" action="/paxina-app">
-        
+<body name="logueo">
+
+
+    <form name="formulario-logueo" id="form-logueo">
         <input name="nome2" type="text" placeholder="introduce o teu nome 2" />
         <input name="apelido2" type="text" placeholder="introduce o teu apelido 2" />
-        <button id="envio2">enviar</button>
+        <button name="logueo" id="envio2">enviar</button>
     </form>
+
+    <!-- CON ACTION -> ENDPOINT
+        <form name="formulario-logueo" method="post" action="/paxina-app">
+            
+            <input name="nome2" type="text" placeholder="introduce o teu nome 2" />
+            <input name="apelido2" type="text" placeholder="introduce o teu apelido 2" />
+            <button name="logueo" id="envio2">enviar</button>
+        </form> 
+    -->
 </body>
 </html>
