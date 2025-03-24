@@ -1,4 +1,7 @@
 export class Comunicacion {
+    // Define datos como una propiedad estática
+    static datos: any;
+
     static async metodoGet(endpoint: string) {
         console.log("this.endpoint", endpoint);
         let datoServidor = await fetch(endpoint);
