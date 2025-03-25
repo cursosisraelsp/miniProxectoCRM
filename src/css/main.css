@@ -9,3 +9,12 @@
 @import url("./paxina.axustes/index.css");
 /*IMPORT VANESSA*/
 @import url("./paxina.customers/index.css");
+
+.miniatura-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  

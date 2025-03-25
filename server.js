@@ -53,6 +53,9 @@ app.post("/logueandome",(req,res)=>{
 app.get("/home",(req,res)=>{
     paxinaHome(req,res)
 })
+app.get("/app", (req, res) => {
+    paxinaApp(req, res);
+})
 // GETTERS PáXINAS
 app.get("/invoices",(req,res)=>{
     paxinaInvoices(req,res)
@@ -77,7 +80,7 @@ app.get("/formulario-producto-adrian",(req,res)=>{
 })
 //Un evento dende o cliente
 app.post("/envio-datos-o-servidor",(req,res)=>{
-    console.log("req.body ",req.body,req.body.datosEnvio )
+    console.log("req.body ",req.body)
     res.send({mensaxe:"datos enviados"})
 })
 //##########

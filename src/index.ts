@@ -32,8 +32,8 @@ if(location.pathname == "/logueo"){
         await Comunicacion.metodoPost("/logueandome",datosFormulario);
         const resposta:any = Comunicacion.respostaServidor;
         console.log("resposta do servidor:", resposta);
-        if (resposta?.resposta === "o envio foi correcto") {
-            window.location.href ="/formulario-producto-adrian";
+        if (resposta?.resposta === "o envío foi correcto") {
+            window.location.href ="/app";
         } else{
             alert("Usuario incorrecto.Non podes acceder.");
         }
