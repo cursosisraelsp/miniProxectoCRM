@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 module.exports = {
-    mode: "production",// pode ser 'mode:production'
+    mode: "development",// pode ser 'mode:production'
     devtool: "inline-source-map",
     entry: './src/index.ts', 
     module: {
@@ -33,13 +33,25 @@ module.exports = {
         filename: './javascript/bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
+    
     plugins: [
-      
-        new MiniCssExtractPlugin({ filename: './css/styles.css' }), // Arquivo CSS final
+        /*vanessa */
+        
+        new HtmlWebpackPlugin({
+            filename: './views/logueo.html',
+            template: './src/views/logueo.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: './views/customers.html',
+            template: './src/views/customers.html',
+        }),
+       
+        new MiniCssExtractPlugin({ filename: 'css/[name].css' }), // Arquivo CSS final
         new CopyPlugin({
           patterns: [
+            
             { from: "./src/imaxenes", to: "imaxenes" },
-            { from: "./src/views", to: "views" },
+            
           ],
         })
     ],
