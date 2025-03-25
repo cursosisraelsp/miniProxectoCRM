@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { paxinaApp, paxinaNoUser, paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
+const { paxinaAxustes,paxinaApp, paxinaNoUser, paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
 
 const app = express();
 
@@ -30,7 +30,9 @@ app.get("/recibo-datos-do-servidor", (req, res) => {
 app.get("/logueo", (req, res) => {
     paxinaLogueo(req, res);
 });
-
+app.get("/axustes", (req, res) => {
+    paxinaAxustes(req, res);
+});
 //### POST
 app.post("/paxina-app", (req, res) => {
     console.log("📥 Recibo dato no servidor:", req.body);
@@ -39,6 +41,12 @@ app.post("/paxina-app", (req, res) => {
 
     condicion ? paxinaApp(req, res) : paxinaNoUser(req, res);
 });
+// Ruta para recibir datos do formulario de axustes
+app.post("/axustes", (req, res) => {
+    console.log("📩 Datos recibidos dende axustes:", req.body);
+    res.json({ mensaxe: "Datos recibidos correctamente" });
+});
+
 
 //### GETTERS PáXINAS
 app.get("/invoices", (req, res) => { paxinaInvoices(req, res); });

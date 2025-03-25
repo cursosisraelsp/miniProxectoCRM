@@ -16,7 +16,7 @@
     [angel="container-aside"] {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 100px;
         align-items: center;
         margin-top: 8px;
     }
@@ -68,44 +68,63 @@
     }
 
     [angel="sections"] {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    
+[angel="section-izda"] {
+    margin-left: 100px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5%;
+    border: 1px solid black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    padding: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+    max-width: 450px;
+    max-height: 80vh;        /* ✅ que no supere la pantalla */
+    overflow-y: auto;        /* ✅ permite hacer scroll si hace falta */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+    [angel="contenedor-izda"] {
+        width: 100%;
     }
 
-    [angel="section-izda"] {
-        background-color: white;
-        padding: 10px;
-        height: 75%;
-        margin-top: 5%;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    [angel="section-dcha"] {
+        flex: 1;
     }
-
+    
     [angel="titulo-superior"] {
         font-size: 20px;
+        color: black;
     }
-
+    
     [angel="div-superior"] {
         display: flex;
-        gap: 50px;
-        padding: 50px;
+        gap: 20px;
     }
-
+    
     [angel="img-container"] {
         margin-top: 20px;
     }
-
+    
     [angel="botones-perfil"] {
         width: 80%;
         display: flex;
         flex-direction: column;
         gap: 30px;
     }
-
+    
     [angel="boton-change"] {
         margin-top: 30px;
-        width: 150px;
+        width: 120px;
         border: 1px solid rgb(15, 15, 163);
         border-radius: 5px;
         background-color: #4b8ce7;
@@ -114,30 +133,30 @@
         cursor: pointer;
         transition: all 0.3s ease;
     }
-
+    
     [angel="boton-change"]:hover {
         background-color: rgb(15, 15, 163);
     }
-
+    
     [angel="boton-delete"] {
-        width: 150px;
+        width: 120px;
         border: 1px solid #8b8989;
         border-radius: 5px;
         padding: 10px;
         cursor: pointer;
         transition: all 0.3s ease;
     }
-
+    
     [angel="boton-delete"]:hover {
         background-color: rgb(15, 15, 163);
         color: white;
     }
-
+    
     [angel="contenedor-superior"] {
         display: flex;
         gap: 15px;
     }
-
+    
     [angel="label-nombre"], 
     [angel="label-apellido"] {
         width: 50%;
@@ -146,7 +165,7 @@
         font-weight: bold;
         margin-bottom: 10px;
     }
-
+    
     [angel="contenedor-inferior"] {
         display: flex;
         flex-direction: column;
@@ -154,8 +173,11 @@
         gap: 5px;
         margin-bottom: 5px;
     }
+    
 
     [angel="section-dcha"] {
+        width: 45%; /* Igual que el izquierdo */
+        min-width: 350px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -164,10 +186,13 @@
         margin-top: 4%;
         gap: 80px;
     }
+    
 
     [angel="img-container-dcha"] {
         background-color: white;
         padding: 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+        border: 1px solid black;
     }
 
     [angel="boton-container"] [angel="boton-send"] {
@@ -417,28 +442,32 @@
 /* SECCIÓN IZQUIERDA - Ajustada para que entre todo */
 [angel="section-izda"] {
     background-color: white;
-    width: 440px; /* Un poco más ancha */
-    padding: 30px;
+    width: 400px;
     margin-top: 5%;
     box-shadow: 0 8px 16px rgba(0, 0, 1, 0.8);
-    border: 3px solid rgb(112, 80, 80);
+    border: 1px solid rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
+
+    max-height: 85vh;   /* ✅ no supera la pantalla */
+    
 }
+
 
 /* Imagen centrada y ajustada para que no sobresalga */
 [angel="imagen-superior-izda"] {
-    width: 120px;
+    width: 100px;
     height: auto;
-    margin-top: -10px; /* Un poco menos negativo */
+    display: flex;
 }
 
 /* Contenedor de botones alineado */
 [angel="botones-superior-izda"] {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
     width: 100%;
@@ -489,6 +518,8 @@
     width: 100%;
     align-items: center;
     gap: 10px;
+    color: black;
+    font-weight: bold;
 }
 
 /* Labels más grandes y en negro */
@@ -499,10 +530,10 @@
 [angel="label-profesion"],
 [angel="label-rol"] {
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-weight: bold;
     font-size: 16px;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 
 /* Inputs ajustados para que no se salgan */
