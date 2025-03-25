@@ -41,7 +41,7 @@ module.exports = {
             template: './src/views/logueo.html'
         }),
         new HtmlWebpackPlugin({
-            filename: './views/customers.html',
+            filename: './views/invoices.html',
             template: './src/views/invoices.html',
         }),
        
