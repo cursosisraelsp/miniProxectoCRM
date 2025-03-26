@@ -33,7 +33,7 @@ if(location.pathname == "/logueo"){
         const resposta:any = Comunicacion.respostaServidor;
         console.log("resposta do servidor:", resposta);
         if (resposta?.resposta === "o envío foi correcto") {
-            window.location.href ="/app";
+            window.location.href ="/home";
         } else{
             alert("Usuario incorrecto.Non podes acceder.");
         }
