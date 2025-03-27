@@ -40,12 +40,24 @@ module.exports = {
     
     plugins: [
         new HtmlWebpackPlugin({
+            filename: './index.html', // Archivo de salida para logueo.html
+            template: './src/index.html', // Plantilla HTML para logueo
+        }),
+        new HtmlWebpackPlugin({
+            filename: './views/no-user.html', // Archivo de salida para logueo.html
+            template: './src/views/no-user.html', // Plantilla HTML para logueo
+        }),
+        new HtmlWebpackPlugin({
             filename: './views/logueo.html', // Archivo de salida para logueo.html
             template: './src/views/logueo.html', // Plantilla HTML para logueo
         }),
         new HtmlWebpackPlugin({
             filename: './views/invoices.html', // Archivo de salida para invoices.html
             template: './src/views/invoices.html', // Plantilla HTML para invoices
+        }),
+        new HtmlWebpackPlugin({
+            filename: './views/tablasTable.html', // Archivo de salida para invoices.html
+            template: './src/views/tablasTable.html', // Plantilla HTML para invoices
         }),
         new MiniCssExtractPlugin({ filename: 'css/[name].css' }), // Archivo CSS final
         new CopyPlugin({

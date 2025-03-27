@@ -19,7 +19,8 @@ function main(): void {
             oFormulario.metodoAccionFormulario();
             let datosFormulario = oFormulario.DatosEnviados;
             
-            await Comunicacion.metodoPost("/logueo",datosFormulario)
+            let respostaServidor = await Comunicacion.metodoPost("/logueo",datosFormulario);
+            location.href = "/invoices"
         })
         
     }

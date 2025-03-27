@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const { paxinaApp, paxinaNoUser, paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
+const {  paxinaLogueo, paxinaInvoices,paxinaTablasTable ,paxinanouser} = require("./controladores/views");
 
 const app = express();
 
@@ -31,9 +31,6 @@ app.post("/logueo", (req, res) => {
 
 // GETTERS PáXINAS
 
-app.get("/home",(req,res)=>{
-    paxinaHome(req,res)
-})
 app.get("/logueo", (req, res) => {
     paxinaLogueo(req, res)
 })
@@ -41,29 +38,14 @@ app.get("/logueo", (req, res) => {
 app.get("/invoices",(req,res)=>{
     paxinaInvoices(req,res)
 })
-app.get("/cesta",(req,res)=>{
-    paxinaCesta(req,res)
+app.get("/no-user", (req, res) => {
+    paxinanouser(req, res)
 })
-app.get("/clientes",(req,res)=>{
-    paxinaCustomers(req,res)
-})
-app.get("/graficas",(req,res)=>{
-    paxinaGraficas(req,res)
-})
-app.get("/productos",(req,res)=>{
-    paxinaNewProduct(req,res)
-})
-app.get("/axustes",(req,res)=>{
-    paxinaAxustes(req,res)
+// GETTERS PáXINAS
+app.get("/tablasTable",(req,res)=>{
+    paxinaTablasTable(req,res)
 })
 
-
-//Un evento dende o cliente
-app.post("/envio-datos-o-servidor", (req, res) => {
-    //imprimir datos enviados por consola
-    console.log(req.body, req.body.datosEnvio);
-    res.send({ mensaxe: "datos enviados" })
-})
 //##########
 //START SERVER
 app.listen(3000, function () {
