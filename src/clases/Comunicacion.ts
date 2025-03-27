@@ -8,7 +8,7 @@ export class Comunicacion{
         this.datos = await datoServidor.json();
     }
 
-    static async metodoPost(endpoint: string){
+   /* static async metodoPost(endpoint: string){
         type datosObxeto = {
             dato1: string,
             dato2: string,
@@ -31,8 +31,13 @@ export class Comunicacion{
         let resposta = await fetch(endpoint,obxetoEnvio);
         this.datos = await resposta.json();
 
-    }
+    }*/
 
+        static async metodoPost(endpoint: string,datos:any){
+            let resposta = await fetch(endpoint,datos); //  Son os datos que enviamos co endpoint
+            this.datos = await resposta.json();         //  En resposta é que me está a enviar o Server
+            console.log("estou en Comunicacion ", this.datos)
+        }
     static get respostaServidor(){
         return this.datos
     }

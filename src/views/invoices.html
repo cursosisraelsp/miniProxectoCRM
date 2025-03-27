@@ -3,10 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css" />
+    <title>Invoices Page</title>
+    <link rel="stylesheet" href="../css/styles_invoice.css" />
+    
 </head>
 <body>
-    invoices
+    <aside>
+        <img src="../imaxenes/menuImg0.svg" alt="Menu Item 1">
+        <a href="./home"><img src="../imaxenes/menuImg1.svg" alt="Menu Item 2"></a>
+        <a href="./customers"><img src="../imaxenes/menuImg2.svg" alt="Menu Item 3"></a>
+        <a href="./invoices"><img src="../imaxenes/menuImg3.svg" alt="Menu Item 4"></a>
+        <a href="./page5.html"><img src="../imaxenes/menuImg4.svg" alt="Menu Item 5"></a>
+    </aside>
+    <main>
+        <header>
+            <img src="../imaxenes/Search.svg" alt="Search">
+            <div id="divHeader">
+                <img src="../imaxenes/Notifications.svg" alt="Notifications">
+                <img src="../imaxenes/Profile.svg" alt="Profile">
+            </div>
+        </header>
+        <section class="section-paxinas">
+            <section class="main-section">
+                <article class="cabecera">
+                    <h1>Invoices</h1>
+                    <button class="add-btn">+Add new</button>
+                </article>
+                <article class="cabecera">
+                    <div id = invoice1>
+                        <input type="text" placeholder="Sort by Date ">
+                        <!--<img src="" alt=""><spam>Sort by Date </spam>-->
+                        <input type="date" placeholder="Any Date">
+                        <!--<img src="" alt=""><spam>Any Date </spam>-->
+                        <input type="text" placeholder="Search...">
+                    </div>
+                    <div>
+                        <img src="../imaxenes/Group.png" alt="image"> 
+                        <!--<img src="" alt="image">-->
+                    </div>
+                </article>
+                <article class="estados">
+                    <div class="estado">All: <span>$98,774</span></div>
+                    <div class="estado">Unpaid: <span>$9,407</span></div>
+                    <div class="estado">Paid: <span>$87,774</span></div>
+                    <div class="estado">Overdue: <span>$900</span></div>
+                </article>
+                <article>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Number</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Outstanding</th>
+                                <th>Due Date</th>
+                                <th>State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>02-21-2018</td>
+                                <td>00087</td>
+                                <td>Reactial</td>
+                                <td>$2500</td>
+                                <td>0</td>
+                                <td>03-17-2018</td>
+                                <td>Invoiced</td>
+                            </tr>
+                            <tr>
+                                <td>02-16-2018</td>
+                                <td>00086</td>
+                                <td>Promotional</td>
+                                <td>$1890</td>
+                                <td>0</td>
+                                <td>11-18-2018</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>01-27-2018</td>
+                                <td>00085</td>
+                                <td>Effie Watkins</td>
+                                <td>$3400</td>
+                                <td>0</td>
+                                <td>09-07-2018</td>
+                                <td>Overdue</td>
+                            </tr>
+                            <tr>
+                                <td>01-27-2018</td>
+                                <td>00084</td>
+                                <td>Traveller</td>
+                                <td>$600</td>
+                                <td>0</td>
+                                <td>02-01-2018</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>01-07-2018</td>
+                                <td>00083</td>
+                                <td>Reactial</td>
+                                <td>$400</td>
+                                <td>0</td>
+                                <td>06-27-2018</td>
+                                <td>Due Date</td>
+                            </tr>
+                            <tr>
+                                <td>12-28-2017</td>
+                                <td>00082</td>
+                                <td>Traveller</td>
+                                <td>$2500</td>
+                                <td>0</td>
+                                <td>08-11-2018</td>
+                                <td>Invoiced</td>
+                            </tr>
+                            <tr>
+                                <td>12-28-2017</td>
+                                <td>00081</td>
+                                <td>Don Walsh</td>
+                                <td>$7300</td>
+                                <td>0</td>
+                                <td>05-02-2018</td>
+                                <td>Due Date</td>
+                            </tr>
+                            <tr>
+                                <td>12-24-2017</td>
+                                <td>00080</td>
+                                <td>Brent Parker</td>
+                                <td>$1200</td>
+                                <td>0</td>
+                                <td>03-27-2018</td>
+                                <td>Paid</td>
+                            </tr>
+                            <tr>
+                                <td>12-20-20171</td>
+                                <td>00079</td>
+                                <td>Promotional</td>
+                                <td>$890</td>
+                                <td>0</td>
+                                <td>09-05-2018</td>
+                                <td>Invoiced</td>
+                            </tr>
+                            <tr>
+                                <td>12-02-2017</td>
+                                <td>00078</td>
+                                <td>Reactial</td>
+                                <td>$900</td>
+                                <td>0</td>
+                                <td>08-26-2018</td>
+                                <td>Paid</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </article>
+                <article class="cabecera">
+                    <div>
+                        <img src="../imaxenes/76 shown.png" alt="">
+                    </div>
+                    <div>
+                        <img src="../imaxenes/First.png" alt="">
+                        <img src="../imaxenes/arrow.png" alt="">
+                        <img src="../imaxenes/1234.png" alt="">
+                        <img src="../imaxenes/arrow copy.png" alt="">
+                        <img src="../imaxenes/Last.png" alt="">
+                    </div>
+                </article>
+            </section>   
+        </section>
+    </main>
 </body>
 </html>
