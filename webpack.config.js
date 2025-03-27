@@ -59,6 +59,14 @@ module.exports = {
             filename: './views/tablasTable.html', // Archivo de salida para invoices.html
             template: './src/views/tablasTable.html', // Plantilla HTML para invoices
         }),
+        new HtmlWebpackPlugin({
+            filename: './views/app.html', // Archivo de salida para invoices.html
+            template: './src/views/app.html', // Plantilla HTML para invoices
+        }),
+        new HtmlWebpackPlugin({
+            filename: './views/grid.html', // Archivo de salida para invoices.html
+            template: './src/views/grid.html', // Plantilla HTML para invoices
+        }),
         new MiniCssExtractPlugin({ filename: 'css/[name].css' }), // Archivo CSS final
         new CopyPlugin({
             patterns: [

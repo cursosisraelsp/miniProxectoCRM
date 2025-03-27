@@ -45,6 +45,17 @@ app.get("/no-user", (req, res) => {
 app.get("/tablasTable",(req,res)=>{
     paxinaTablasTable(req,res)
 })
+app.get("/app",(req,res)=>{
+    paxinaApp(req,res)
+})
+app.get("/grid", (req, res) => {
+    paxinaGrid(req, res)
+})
+// GETTERS PáXINAS
+app.get("/index",(req,res)=>{
+    paxinaIndex(req,res)
+})
+
 
 //##########
 //START SERVER
