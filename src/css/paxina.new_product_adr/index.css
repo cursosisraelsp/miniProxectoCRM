@@ -1,164 +1,194 @@
+/* ==========================
+   ESTILOS GLOBALES
+============================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f6f7fc;
-    min-height: 100vh;
-  }
-  
-  .navbar {
-    width: 100%;
-    height: 70px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  
-  .navbar-icons img {
-    width: 24px;
-    margin-left: 20px;
-  }
-  
-  .sidebar {
-    width: 5%;
-    min-width: 60px;
-    background: linear-gradient(to bottom, #4a90e2, #5f6af4);
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 10px;
-    z-index: 11;
-  }
-  
-  .sidebar .logo {
-    width: 35px;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar nav a img {
-    width: 28px;
-    margin: 20px 0;
-    transition: transform 0.2s;
-  }
-  
-  .sidebar nav a img:hover {
-    transform: scale(1.2);
-  }
-  
-  .main-content {
-    margin-left: 5%;
-    padding: 100px 40px 40px 40px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-  
-  .form-card {
-    display: flex;
-    background-color: #fff;
-    border-radius: 10px;
-    width: 1000px;
-    padding: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    gap: 40px;
-  }
-  
-  .form-left {
-    width: 608px;
-    height: 644px;
-  }
-  
-  .form-left h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #000;
-  }
-  
-  .product-img {
-    width: 100px;
-    margin-bottom: 20px;
-  }
-  
-  .btn {
-    width: 260px;
-    height: 40px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-bottom: 10px;
-    transition: 0.2s;
-  }
-  
-  .btn.dark {
-    background-color: #1c1c3d;
-    color: white;
-    border: none;
-  }
-  
-  .btn.light {
-    background-color: white;
-    border: 1px solid #a4a4cb;
-    color: #1c1c3d;
-  }
-  
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-top: 20px;
-  }
-  
-  .form-grid label {
-    font-weight: bold;
-    grid-column: span 1;
-  }
-  
-  .form-grid input {
-    padding: 8px;
-    border: 1px solid #4c8deb;
-    border-radius: 5px;
-    grid-column: span 1;
-  }
-  
-  .form-right {
-    width: 400px;
-    height: 644px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .engranaje-img {
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
-  }
-  
-  .btn.send {
-    width: 260px;
-    height: 65px;
-    background-color: #4c8deb;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 12px;
-    border: none;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f6f7fc;
+  min-height: 100vh;
+}
+
+/* ==========================
+   NAVBAR SUPERIOR
+============================= */
+.navbar {
+  height: 70px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  padding-left: 100px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  left: 60px;
+  right: 0;
+  z-index: 10;
+}
+
+.navbar h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: #4A4A4A;
+}
+
+.navbar-icons img {
+  width: 24px;
+  margin-left: 20px;
+}
+
+/* ==========================
+   SIDEBAR LATERAL
+============================= */
+.sidebar {
+  width: 60px;
+  background: linear-gradient(to bottom, #4a90e2, #5f6af4);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+  z-index: 11;
+}
+
+.sidebar .logo {
+  width: 35px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a img {
+  width: 28px;
+  margin: 20px 0;
+  transition: transform 0.2s;
+}
+
+.sidebar nav a img:hover {
+  transform: scale(1.2);
+}
+
+/* ==========================
+   CONTENIDO PRINCIPAL
+============================= */
+.main-content {
+  margin-left: 60px;
+  padding: 100px 40px 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.form-card {
+  display: flex;
+  gap: 40px;
+}
+
+/* Formulario a la izquierda */
+.form-left {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  width: 608px;
+  height: 644px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 2px solid #2196F3;
+}
+
+.form-left h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.product-img {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  width: 220px;
+  height: 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: 0.2s;
+}
+
+.btn.dark {
+  background-color: #1c1c3d;
+  color: white;
+  border: none;
+}
+
+.btn.light {
+  background-color: white;
+  border: 1px solid #a4a4cb;
+  color: #1c1c3d;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 15px 20px;
+  margin-top: 20px;
+}
+
+.form-grid label {
+  font-weight: bold;
+  align-self: center;
+}
+
+.form-grid input {
+  padding: 10px;
+  border: 1px solid #4c8deb;
+  border-radius: 5px;
+  opacity: 0.6;
+}
+
+/* Imagen y botón separados a la derecha */
+.form-right {
+  background-color: white;
+  border-radius: 10px;
+  width: 400px;
+  height: 644px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.engranaje-img {
+  width: 340px;
+  height: auto;
+  object-fit: contain;
+}
+
+.btn.send {
+  width: 260px;
+  height: 65px;
+  background-color: #4c8deb;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  margin-top: 20px;
+}
+
+.btn.send:hover {
+  background-color: #3a7bd5;
+}
