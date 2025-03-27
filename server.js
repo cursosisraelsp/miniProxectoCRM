@@ -1,17 +1,34 @@
 const express = require("express");
 const path = require("path");
-const { paxinaAxustes,paxinaApp, paxinaNoUser, paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
+const {
+    paxinaAxustes,
+    paxinaApp,
+    paxinaNoUser,
+    paxinaLogueo,
+    paxinaInvoices,
+    paxinaCesta,
+    paxinaCustomers,
+    paxinaGraficas
+} = require("./controladores/views");
 
 const app = express();
 
-// 🔥 Servir archivos estáticos correctamente desde `dist`
-app.use(express.static(path.join(__dirname, "dist"), {
-    setHeaders: (res, filePath) => {
-        if (filePath.endsWith(".css")) {
-            res.setHeader("Content-Type", "text/css"); // ✅ Fuerza el MIME correcto
+// ✅ Middleware que sirve archivos estáticos excepto en "/"
+app.use((req, res, next) => {
+    if (req.path === "/") return next(); // Evita el listing en la raíz
+    express.static(path.join(__dirname, "dist"), {
+        setHeaders: (res, filePath) => {
+            if (filePath.endsWith(".css")) {
+                res.setHeader("Content-Type", "text/css");
+            }
         }
-    }
-}));
+    })(req, res, next);
+});
+
+// ✅ Servir directamente el login cuando se accede a "/"
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "dist/views/logueo.html"));
+});
 
 // Middleware para formularios
 app.use(express.urlencoded({ extended: true }));
@@ -30,23 +47,22 @@ app.get("/recibo-datos-do-servidor", (req, res) => {
 app.get("/logueo", (req, res) => {
     paxinaLogueo(req, res);
 });
+
 app.get("/axustes", (req, res) => {
     paxinaAxustes(req, res);
 });
+
 //### POST
 app.post("/paxina-app", (req, res) => {
     console.log("📥 Recibo dato no servidor:", req.body);
-
     let condicion = req.body.nome2 === 'Israel' && req.body.apelido2 === 'mariano';
-
     condicion ? paxinaApp(req, res) : paxinaNoUser(req, res);
 });
-// Ruta para recibir datos do formulario de axustes
+
 app.post("/axustes", (req, res) => {
     console.log("📩 Datos recibidos dende axustes:", req.body);
     res.json({ mensaxe: "Datos recibidos correctamente" });
 });
-
 
 //### GETTERS PáXINAS
 app.get("/invoices", (req, res) => { paxinaInvoices(req, res); });
@@ -54,7 +70,6 @@ app.get("/cesta", (req, res) => { paxinaCesta(req, res); });
 app.get("/clientes", (req, res) => { paxinaCustomers(req, res); });
 app.get("/graficas", (req, res) => { paxinaGraficas(req, res); });
 
-// Un evento dende o cliente
 app.post("/envio-datos-o-servidor", (req, res) => {
     res.send({ mensaxe: "Datos enviados" });
 });

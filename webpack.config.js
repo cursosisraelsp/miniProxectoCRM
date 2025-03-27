@@ -35,7 +35,7 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     output: {
-        filename: 'javascript/bundle.[contenthash].js',
+        filename: 'javascript/bundle.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
@@ -56,11 +56,13 @@ module.exports = {
         new MiniCssExtractPlugin({ filename: "css/paxina.settings/index.css" }),
         new CopyPlugin({
             patterns: [
+                { from: "./src/css", to: "css" }, // 👈 Copia TODOS los CSS incluyendo main.css
                 { from: "./src/imaxenes", to: "imaxenes" },
-                { from: "./src/views", to: "views", globOptions: { ignore: ["**/axustes.html"] } }, // 🔥 Evita copiar axustes.html
+                { from: "./src/views", to: "views", globOptions: { ignore: ["**/axustes.html"] } },
                 { from: "./controladores/views", to: "javascript" }
             ],
         }),
+        
         new HtmlWebpackPlugin({
             template: "./src/views/axustes.html",
             filename: "views/axustes.html",
