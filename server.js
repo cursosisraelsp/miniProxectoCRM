@@ -1,57 +1,69 @@
 const express = require("express");
 const path = require("path");
-const { paxinaApp, paxinaNoUser,paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
+const { paxinaApp, paxinaNoUser, paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
 
 const app = express();
 
 // Paxinas
-app.use(express.urlencoded({extended: true}))
+app.use(express.urlencoded({ extended: true }))
 
 
 // Accedo o arquivo estático
 app.use(express.static(path.join(__dirname, "dist")));
 //### GETTERS
-app.get("/recibo-datos-do-servidor",(req,res)=>{
+app.get("/recibo-datos-do-servidor", (req, res) => {
     res.send({
-        mensaxe:{
-            dato1:"Juanito",
-            dato2:"pepito",
-            dato3:3
+        mensaxe: {
+            dato1: "Juanito",
+            dato2: "pepito",
+            dato3: 3
         }
     })
 })
-app.get("/logueo",(req,res)=>{
-    paxinaLogueo(req,res)
+app.get("/logueo", (req, res) => {
+    paxinaLogueo(req, res)
 })
 //### POST
-app.post("/paxina-app",(req,res)=>{
-    
-    console.log("recibo dato no server",req.body)
+app.post("/paxina-app", (req, res) => {
+
+    console.log("recibo dato no server", req.body)
 
     let condicion = req.body.nome2 === 'Israel' && req.body.apelido2 === 'mariano';
-    
-    condicion ? paxinaApp(req,res) : paxinaNoUser(req,res)
+
+    condicion ? paxinaApp(req, res) : paxinaNoUser(req, res)
 
 })
 // GETTERS PáXINAS
-app.get("/invoices",(req,res)=>{
-    paxinaInvoices(req,res)
+app.get("/invoices", (req, res) => {
+    paxinaInvoices(req, res)
 })
-app.get("/cesta",(req,res)=>{
-    paxinaCesta(req,res)
+app.get("/cesta", (req, res) => {
+    paxinaCesta(req, res)
 })
-app.get("/clientes",(req,res)=>{
-    paxinaCustomers(req,res)
+app.get("/clientes", (req, res) => {
+    paxinaCustomers(req, res)
 })
-app.get("/graficas",(req,res)=>{
-    paxinaGraficas(req,res)
+app.get("/graficas", (req, res) => {
+    paxinaGraficas(req, res)
 })
 //Un evento dende o cliente
-app.post("/envio-datos-o-servidor",(req,res)=>{
-    res.send({mensaxe:"datos enviados"})
+app.post("/envio-datos-o-servidor", (req, res) => {
+    res.send({ mensaxe: "datos enviados" })
 })
+
+app.post("/crear-usuario", (req, res) => {
+    console.log("Usuario novo:", req.body);
+
+    // Aquí podes facer a lóxica de gardar na BD, validación, etc.
+    if (req.body.nome && req.body.email && req.body.contrasinal) {
+        res.send({ mensaxe: "Usuario creado correctamente!" });
+    } else {
+        res.status(400).send({ erro: "Faltan datos no formulario." });
+    }
+});
+
 //##########
 //START SERVER
 app.listen(3000, function () {
- console.log("Server running");
+    console.log("Server running");
 });
