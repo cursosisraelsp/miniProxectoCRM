@@ -1,12 +1,20 @@
 const express = require("express");
 const path = require("path");
-const { paxinaApp, paxinaNoUser,paxinaLogueo, paxinaInvoices, paxinaCesta, paxinaCustomers, paxinaGraficas } = require("./controladores/views");
+const {
+    paxinaAxustes,
+    paxinaApp,
+    paxinaNoUser,
+    paxinaLogueo,
+    paxinaInvoices,
+    paxinaCesta,
+    paxinaCustomers,
+    paxinaGraficas
+} = require("./controladores/views");
 
 const app = express();
 
-// Paxinas
+// Middleware para formularios
 app.use(express.urlencoded({extended: true}))
-
 
 // Accedo o arquivo estático
 app.use(express.static(path.join(__dirname, "dist")));
@@ -23,6 +31,9 @@ app.get("/recibo-datos-do-servidor",(req,res)=>{
 app.get("/logueo",(req,res)=>{
     paxinaLogueo(req,res)
 })
+app.get("/axustes",(req,res)=>{
+    paxinaAxustes(req,res)
+})
 //### POST
 app.post("/paxina-app",(req,res)=>{
     
@@ -33,6 +44,10 @@ app.post("/paxina-app",(req,res)=>{
     condicion ? paxinaApp(req,res) : paxinaNoUser(req,res)
 
 })
+app.post("/axustes", (req, res) => {
+    console.log("📩 Datos recibidos dende axustes:", req.body);
+    res.json({ mensaxe: "Datos recibidos correctamente" });
+});
 // GETTERS PáXINAS
 app.get("/invoices",(req,res)=>{
     paxinaInvoices(req,res)

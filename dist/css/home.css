@@ -1,0 +1,36 @@
+body[name="body-app"]{
+    display: flex;
+}
+
+
+main[name="main-app"]{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: #F5F5F5; */
+    /* & > section {
+        
+    } */
+    background-color: red;
+    & > header{
+        /* background-color: white; */
+        background-color: orange;
+        height: 70px;
+    }
+    & > header + section{
+        background-color: green;
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+    }
+    & > header + section > header {
+        background-color: aqua;
+    }
+    
+}
+ section[name="section-imaxes-home"]{
+    flex-direction: column;
+    justify-content: center;
+} 

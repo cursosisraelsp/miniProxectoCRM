@@ -1,0 +1,1 @@
+const path=require("path"),paxinaAxustes=(e,s)=>{s.sendFile(path.join(__dirname,"../../dist/views/axustes.html"))};module.exports=paxinaAxustes;

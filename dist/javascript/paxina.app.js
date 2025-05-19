@@ -1,0 +1,1 @@
+const path=require("path"),paxinaApp=(p,a)=>{a.sendFile(path.join(__dirname,"../../dist/views/app.html"))};module.exports=paxinaApp;

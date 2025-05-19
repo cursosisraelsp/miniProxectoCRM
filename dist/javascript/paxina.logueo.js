@@ -1,0 +1,1 @@
+const path=require("path"),paxinaLogueo=(e,o)=>{o.sendFile(path.join(__dirname,"../../dist/views/logueo.html"))};module.exports=paxinaLogueo;

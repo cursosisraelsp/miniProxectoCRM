@@ -1,0 +1,588 @@
+* {
+    margin: 0;
+    padding: 0;
+  
+ 
+@media (min-width: 769px) {
+    /* Estilos generales */
+    body[angel="mi-proyecto"] {
+        display: flex;
+    }
+
+    aside[angel="menu-lateral"] {
+        background-color: #4b8ce7;
+    }
+
+    [angel="container-aside"] {
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    [angel="boton-aside"] {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #4b8ce7;
+        display: flex;
+        border-radius: 20px;
+        border-color: transparent;
+    }
+
+    [angel="boton-aside"]:hover {
+        background-color: rgb(15, 15, 163);
+        color: white;
+    }
+
+    [angel="img-aside"] {
+        height: 50px;
+        width: 50px;
+    }
+
+    main[angel="contenido-principal"] {
+        width: 95%;
+        height: 100vh;
+        background-color: #f4f0f0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header[angel="encabezado"] {
+        height: 8%;
+        background-color: #ffffff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+    }
+
+    [angel="div-header"] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    [angel="img-header"] {
+        max-width: 100px;
+    }
+
+    [angel="sections"] {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+    
+[angel="section-izda"] {
+    margin-left: 100px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 5%;
+    border: 1px solid black;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+    padding: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    min-width: 0;
+    max-width: 450px;
+    max-height: 80vh;        /* ✅ que no supere la pantalla */
+    overflow-y: auto;        /* ✅ permite hacer scroll si hace falta */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+    [angel="contenedor-izda"] {
+        width: 100%;
+    }
+
+    [angel="section-dcha"] {
+        flex: 1;
+    }
+    
+    [angel="titulo-superior"] {
+        font-size: 20px;
+        color: black;
+    }
+    
+    [angel="div-superior"] {
+        display: flex;
+        gap: 20px;
+    }
+    
+    [angel="img-container"] {
+        margin-top: 20px;
+    }
+    
+    [angel="botones-perfil"] {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    [angel="boton-change"] {
+        margin-top: 30px;
+        width: 120px;
+        border: 1px solid rgb(15, 15, 163);
+        border-radius: 5px;
+        background-color: #4b8ce7;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    [angel="boton-change"]:hover {
+        background-color: rgb(15, 15, 163);
+    }
+    
+    [angel="boton-delete"] {
+        width: 120px;
+        border: 1px solid #8b8989;
+        border-radius: 5px;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    [angel="boton-delete"]:hover {
+        background-color: rgb(15, 15, 163);
+        color: white;
+    }
+    
+    [angel="contenedor-superior"] {
+        display: flex;
+        gap: 15px;
+    }
+    
+    [angel="label-nombre"], 
+    [angel="label-apellido"] {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    [angel="contenedor-inferior"] {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        gap: 5px;
+        margin-bottom: 5px;
+    }
+    
+
+    [angel="section-dcha"] {
+        width: 45%; /* Igual que el izquierdo */
+        min-width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        height: 75%;
+        margin-top: 4%;
+        gap: 80px;
+    }
+    
+
+    [angel="img-container-dcha"] {
+        background-color: white;
+        padding: 30px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+        border: 1px solid black;
+    }
+
+    [angel="boton-container"] [angel="boton-send"] {
+        background-color: #4b8ce7;
+        color: white;
+        width: 200px;
+        height: 60px;
+        border: none;
+        border-radius: 5px;
+        align-items: center;
+        font-weight: bold;
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    [angel="boton-container"] [angel="boton-send"]:hover {
+        background-color: rgb(15, 15, 163);
+    }
+}
+
+@media (max-width: 480px) {
+    /* estilos para móviles */
+
+    [angel="mi-proyecto"] {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centra verticalmente */
+        align-items: center; /* Centra horizontalmente */
+        background-color: rgb(164, 229, 255);
+    }
+
+    [angel="menu-lateral"] {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Centra el contenido del aside */
+        order: 1; /* Envía el aside al final del flujo, como un footer */
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: #4b8ce7;
+        padding: 5px;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    [angel="container-aside"] {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    [angel="boton-aside"] {
+        background-color: #4b8ce7;
+        border-color: transparent;
+    }
+
+    [angel="boton-aside"]:hover {
+        border: 1px solid rgb(15, 15, 163);
+        border-radius: 10px;
+        background-color: rgb(15, 15, 163);
+        cursor: pointer;
+    }
+
+    [angel="encabezado"] {
+        margin-bottom: 10px;
+    }
+
+    [angel="div-header"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    [angel="img-superior-izda"] {
+        margin-bottom: 10px;
+    }
+
+    [angel="botones-superior-izda"] {
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+
+    [angel="boton-change"],
+    [angel="boton-delete"] {
+        width: 150px;
+        border: 1px solid rgb(15, 15, 163);
+        border-radius: 5px;
+        background-color: #4b8ce7;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    [angel="boton-change"]:hover,
+    [angel="boton-delete"]:hover {
+        background-color: rgb(15, 15, 163);
+        color: white;
+    }
+
+    [angel="contenido-principal"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 60px;
+    }
+
+    [angel="sections"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    [angel="contenedor-superior"],
+    [angel="contenedor-inferior"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+
+    [angel="label-nombre"],
+    [angel="label-apellido"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    [angel="section-izda"],
+    [angel="div-superior"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    [angel="section-dcha"] {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    [angel="boton-send"] {
+        margin-top: 20px;
+        background-color: #4b8ce7;
+        color: white;
+        width: 200px;
+        height: 60px;
+        border: none;
+        border-radius: 5px;
+        align-items: center;
+        font-weight: bold;
+        font-size: large;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid rgb(15, 15, 163);
+    }
+
+    [angel="boton-send"]:hover {
+        background-color: rgb(15, 15, 163);
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    /* estilos para tablets */
+
+    [angel="mi-proyecto"] {
+        display: flex;
+    }
+
+    [angel="menu-lateral"] {
+        background-color: #4b8ce7;
+    }
+
+    [angel="container-aside"] {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 10px;
+    }
+
+    [angel="boton-aside"] {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #4b8ce7;
+        display: flex;
+        border-radius: 20px;
+        border-color: transparent;
+    }
+
+    [angel="boton-aside"]:hover {
+        background-color: rgb(15, 15, 163);
+        color: white;
+    }
+
+    [angel="imagen-aside"] {
+        height: 50px;
+        width: 50px;
+    }
+
+    [angel="encabezado"] {
+        height: 8%;
+        background-color: #ffffff;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 5px;
+    }
+
+    [angel="div-header"] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    [angel="img-header"] {
+        max-width: 100px;
+    }
+
+    [angel="contenido-principal"] {
+        width: 95%;
+        height: 100vh;
+        background-color: rgb(182, 201, 226);
+        display: flex;
+        flex-direction: column;
+    }
+
+/* Contenedor principal */
+[angel="sections"] {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre secciones */
+}
+
+/* SECCIÓN IZQUIERDA - Ajustada para que entre todo */
+[angel="section-izda"] {
+    background-color: white;
+    width: 400px;
+    margin-top: 5%;
+    box-shadow: 0 8px 16px rgba(0, 0, 1, 0.8);
+    border: 1px solid rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+
+    max-height: 85vh;   /* ✅ no supera la pantalla */
+    
+}
+
+
+/* Imagen centrada y ajustada para que no sobresalga */
+[angel="imagen-superior-izda"] {
+    width: 100px;
+    height: auto;
+    display: flex;
+}
+
+/* Contenedor de botones alineado */
+[angel="botones-superior-izda"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+/* Botones con color y hover */
+[angel="boton-change"],
+[angel="boton-delete"] {
+    width: 130px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+[angel="boton-change"] {
+    background-color: #4b8ce7;
+    color: white;
+    border: 2px solid rgb(15, 15, 163);
+}
+
+[angel="boton-change"]:hover {
+    background-color: rgb(15, 15, 163);
+    border-color: rgb(0, 0, 90);
+}
+
+[angel="boton-delete"] {
+    background-color: white;
+    color: black;
+    border: 2px solid #8b8989;
+}
+
+[angel="boton-delete"]:hover {
+    background-color: rgb(15, 15, 163);
+    color: white;
+    border-color: rgb(0, 0, 90);
+}
+
+/* Labels alineados y con más espacio */
+[angel="contenedor-superior"],
+[angel="contenedor-inferior"] {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+/* Labels más grandes y en negro */
+[angel="label-nombre"],
+[angel="label-apellido"],
+[angel="label-empresa"],
+[angel="label-mail"],
+[angel="label-profesion"],
+[angel="label-rol"] {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+}
+
+/* Inputs ajustados para que no se salgan */
+[angel="contenedor-superior"] input,
+[angel="contenedor-inferior"] input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* SECCIÓN DERECHA - Más estrecha para equilibrar */
+[angel="section-dcha"] {
+    width: 260px; /* Un poco más estrecha */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin-top: 4%;
+    gap: 40px;
+}
+
+/* Imagen en sección derecha */
+[angel="section-superior-dcha"] img {
+    max-width: 90%;
+    height: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 1);
+}
+
+/* Botón de enviar */
+[angel="boton-send"] {
+    background-color: #4b8ce7;
+    color: white;
+    width: 200px;
+    height: 60px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+[angel="boton-send"]:hover {
+    background-color: rgb(14, 14, 148);
+
+}
+}
+}
