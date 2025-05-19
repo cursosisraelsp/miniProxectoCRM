@@ -1,0 +1,369 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* All pages will be affected by this style - Global (Website and App) */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6; /* Improve readability */
+    min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+}
+   
+.container {
+    display: flex;
+    min-height: 100vh; /* Ensure container takes up at least the full viewport height */
+}
+
+/* ---------------------- */
+/* Website Homepage and Login Form */
+
+.content-wrapper-cover {
+    min-width: 100vw;
+    background: linear-gradient(to bottom, #4f2de4 0%, #4487d3 120%);
+    padding: 0 0px;
+    margin: 0;
+    color: white;
+}
+
+.top-bar-cover {
+    padding: 18px 22px;
+    height: 11vh;
+    max-height: 120px;
+    width: 100vw;
+    border-bottom: 1px rgba(58, 47, 214, 0.733) solid;
+    box-shadow: 0px 12px 15px rgba(219, 222, 226, 0.801);
+    display: block;
+    align-content: center;
+}
+  
+.top-bar-cover .btn-cover {
+    background-color: #e0e2e2;
+    padding: 11.5px;
+    border-radius: 8px;
+    margin-left: 2%;
+    float: right;
+    text-decoration: none;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",Arial, sans-serif;
+    font-weight: bolder;
+    color: #34237e;
+}
+  
+.btn-cover:hover {
+    background-color: rgb(22, 31, 41);
+    color: #d0d6dd;
+}
+
+.main-content-cover {
+    min-height: 89vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+  
+.main-content-cover .title-cover {
+    padding-bottom: 10%;
+    max-width: 87vw;
+    min-width: 60vw;
+    text-align: center;
+}
+  
+.main-content-cover .title-cover h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: clamp(48px, 10vw, 110px);
+}
+
+.form-user-login {
+    background: linear-gradient(to bottom, rgb(243, 241, 239) 0%,  rgb(175, 174, 174) 140% );
+    width: 70vw;
+    min-width: 175px;
+    height: 52vh;
+    border: 3px rgb(32, 32, 146) solid;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.form-user-login input, .form-user-login button {
+    display: block;
+    padding: 7.5px;
+    margin: 5vh;
+    background-color: rgb(91, 94, 99);
+    color: cornsilk;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    border-radius: 12px;
+    font-weight: bolder;
+    font-size: 1.05em;
+}
+  
+.form-user-login input::placeholder {
+    color: rgb(163, 163, 170);
+    text-align: center;
+}
+  
+.form-user-login button {
+    background-color: #34237e;
+    cursor: pointer;
+}
+
+/* ----------------------------- */
+/* App styles  */  
+  
+.sidebar { /* Sidebar */
+    width: 5vw; /* Use percentage for more flexible width */
+    max-width: 85px;
+    min-height: 100vh;
+    background-color: #4a90e2;
+    background: linear-gradient(to bottom, #4a90e2 0%, #4624df 100%);
+    color: white;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    align-items: center; /* Adjusted font size */
+}
+  
+.sidebar .user-logo {
+    margin-top: 14px;
+    margin-bottom: 22px;
+    filter: brightness(140%);
+}
+  
+.sidebar ul {
+    list-style-type: none;
+    height: 29vh;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    flex-grow: 1;
+    align-items: center;    
+}
+  
+.sidebar ul li {
+    padding: 0px;
+    margin: 5px;
+    height: 7%;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    align-content: center;
+}
+  
+.sidebar ul li:hover {
+    background-color: #2765c2;
+    border-radius: 3px;
+}
+  
+.sidebar ul li a {
+    cursor: pointer;
+}
+  
+.sidebar ul li .icon-side {
+    width: 60%;
+    filter: invert(94%);
+} 
+   
+.content-wrapper { /* Sidebar */
+    background-color: #ffffff; /* Light background for contrast */
+    min-width: 95vw; /* Use percentage for flexible width */
+    display: flex;
+    flex-direction: column;
+}  
+
+.top-bar { /* Top-bar */
+    padding: 18px 22px;
+    width: 100%;
+    border-bottom: 2px solid #ddddddec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1.5px double #e0e0e3;
+    border-radius: 4px;
+}
+  
+.search-button {
+    background-color: transparent;
+    border: none;
+    padding: 2px;
+    margin-left: 5px;
+    margin-right: 6px;
+    cursor: pointer;
+}
+  
+.search-button img {
+    height: 15px;
+    opacity: 0.65;
+}
+  
+.search-button img:hover {
+    opacity: 0.99;
+    transform: scale(1.25);
+}
+  
+.search-input {
+    width: 160px;
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: darkslategray;
+    border: 0px transparent;
+    outline: none;
+    background-color: #fff;
+}
+  
+.search-input::placeholder {
+    color: #bcbcbc;
+    font-style: normal;
+}
+  
+.user-actions {
+    display: flex;
+    align-items: center;
+}
+  
+.notif-bell {
+    height: 24px;
+    opacity: 0.5;
+    cursor: pointer;
+    padding-right: 16px;
+}
+  
+.notif-bell:hover {
+    transform: scale(1.15);
+    opacity: 0.9;
+}
+  
+.user-actions .user-logo {
+    display: inline-flex;
+    margin-top: -5%;
+    height: ;
+}
+  
+.user-logo {
+    width: 47px;
+    aspect-ratio: 1;
+    border-radius: 23px;
+    background-image: url("../images/icons/profile-photo-default.svg");
+}
+  
+.user-logo:hover {
+    cursor: pointer;
+    border: 2px #42425f solid;
+}
+  
+header { /* Header */
+    background-color: #faf9ff;
+    padding: 20px;
+}
+  
+header h1 {
+    font-size: 2em;
+    margin: 0;
+}  
+ 
+.main-content { /* Main Content */
+    background-color: #faf9ff;
+    padding: 20px;
+    flex-grow: 1;
+}  
+  
+  /* Cards */
+.cards {
+    display: grid;
+    align-items: safe;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+  
+  /* Card */
+.card {
+    background-color: #ffffff;
+    width: fit-content;
+    height: fit-content;
+    padding: 25px;
+    border-radius: 1px;
+    box-shadow: 0 9px 9px 0 rgba(188, 198, 221, 0.2), 0 6px 14px 0 rgba(34, 66, 134, 0.493);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+  
+.card h2 {
+    font-size: 1em;
+}
+  
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 2px;
+}
+  
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+/* Media queries (App: user-logo(top-bar), images homeApp and header */  
+@media (min-width: 1490px) {
+    .user-logo {
+      width: 58px;
+      height: 58px;
+      border-radius: 29px;
+    }
+}
+  
+@media (max-width: 980px) {
+    .user-logo {
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+    }
+}
+  
+@media (max-width: 875px) {
+    .user-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+    }  
+    .card img {
+      width: 165px;
+      height: 165px;
+    }  
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 40px;
+    }  
+    header h1 {
+      font-size: 1.55em; /* Further adjust header font size for very small screens */
+    }
+}
+  
+@media (max-width: 760px) {
+    .user-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 16px;
+    }  
+    .card img {
+      width: 135px;
+      height: 135px;
+    }  
+    .cards {
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 40px;
+    }  
+    header h1 {
+      font-size: 1.55em; /* Further adjust header font size for very small screens */
+    }
+}
+  
